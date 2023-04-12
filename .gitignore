@@ -205,3 +205,4 @@ go.work
 # misc
 .DS_Store
 client/node_modules
+data-svc/test
