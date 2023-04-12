@@ -1,0 +1,81 @@
+.log-exercise {
+  width: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 30px;
+  min-height: 30vh;
+  background: rgb(122, 127, 148);
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+
+  h5 {
+    font-size: 24px;
+    margin: 0;
+    text-transform: capitalize;
+  }
+
+  .form-container {
+    .headers,
+    .inputs {
+      margin: 0 auto;
+      width: 500px;
+      display: grid;
+      grid-template-columns: 33fr 33fr 33fr;
+      grid-column-gap: 5px;
+
+      input {
+        color: white;
+      }
+    }
+
+    .headers {
+      p {
+        text-transform: capitalize;
+        font-size: 14px;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    width: 285px;
+    justify-content: space-between;
+    position: fixed;
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    button {
+      padding: 10px 25px;
+      width: 135px;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      text-transform: capitalize;
+      transition-duration: 1s;
+    }
+
+    .cancel-button {
+      background-color: rgba(197, 78, 78, 0.9);
+
+      &:hover {
+        background-color: rgb(193, 50, 50);
+      }
+    }
+
+    .log-button {
+      background-color: rgba(58, 162, 58, 0.9);
+
+      &:hover {
+        background-color: rgb(48, 188, 48);
+      }
+    }
+  }
+}

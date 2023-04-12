@@ -1,0 +1,42 @@
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .accountSettingsComponent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .accountSettingsComponent h5 {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  .accountSettingsForm {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 90%;
+  }
+
+  .accountSettingsFormInputContainer {
+    margin-bottom: 20px;
+  }
+
+  .saveAccountButton {
+    margin-top: 50px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-transform: capitalize;
+    transition-duration: 1s;
+    padding: 10px 15px;
+    width: 125px;
+    background-color: green;
+    margin-bottom: 20px;
+  }
+
+  .saveAccountButton:hover {
+    background-color: rgb(2, 192, 2);
+  }
+}

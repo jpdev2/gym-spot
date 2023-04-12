@@ -1,0 +1,41 @@
+@media screen and (min-width: 1281px) {
+  .pantry {
+    .pantry-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 10px;
+
+      h5 {
+        font-weight: 600;
+        margin: 0;
+        font-size: 20px;
+      }
+    }
+
+    .headers-container {
+      padding: 0 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border-bottom: white 2px solid;
+      display: grid;
+      grid-template-columns: 50fr 20fr 15fr 15fr;
+
+      p {
+        font-size: 16px;
+      }
+
+      .centered {
+        justify-self: center;
+      }
+    }
+
+    .foods-container {
+      padding: 0 10px;
+      height: 88%;
+      border-radius: 20px;
+      box-sizing: border-box;
+      overflow: scroll;
+    }
+  }
+}

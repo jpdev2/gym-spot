@@ -1,0 +1,45 @@
+.exercises {
+  display: flex;
+  flex-direction: column;
+
+  .top {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+
+    h5 {
+      font-size: 20px;
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .headers {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 70fr 15fr 15fr;
+
+    p {
+      font-size: 16px;
+    }
+
+    .centered {
+      text-align: center;
+    }
+  }
+
+  .content {
+    height: 90%;
+    border-radius: 20px;
+    overflow: scroll;
+
+    .section {
+      h6 {
+        font-size: 14px;
+        text-transform: capitalize;
+        text-decoration: underline;
+        margin: 0 0 0 2.5%;
+      }
+    }
+  }
+}

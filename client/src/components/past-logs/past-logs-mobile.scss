@@ -1,0 +1,21 @@
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .past-logs {
+    margin: 1vh auto 0;
+    width: 95vw;
+    height: 20vh;
+
+    h5 {
+      margin: 10px auto;
+      font-size: 18px;
+    }
+
+    .headers {
+      display: none;
+    }
+
+    .content {
+      margin-top: 10px;
+      height: 18vh;
+    }
+  }
+}

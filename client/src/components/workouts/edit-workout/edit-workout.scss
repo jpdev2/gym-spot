@@ -1,0 +1,83 @@
+.edit-workouts {
+  width: 1000px;
+  height: 600px;
+  padding: 30px;
+  box-sizing: border-box;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: rgb(122, 127, 148);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  h5 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .headers {
+    display: grid;
+    grid-template-columns: 350px 200px 200px 100fr;
+
+    grid-column-gap: 20px;
+    border-bottom: 2px white solid;
+    margin: 15px 0 10px;
+
+    p {
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+
+    .delete-header {
+      margin: 0 0 0 20px;
+    }
+  }
+
+  .workouts-content {
+    height: 400px;
+    overflow: scroll;
+  }
+
+  .buttons {
+    display: flex;
+    width: 285px;
+    justify-content: space-between;
+    position: fixed;
+    position: fixed;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    button {
+      padding: 10px 15px;
+      width: 135px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-transform: capitalize;
+      transition-duration: 1s;
+    }
+
+    .cancel-button {
+      background-color: rgba(197, 78, 78, 0.9);
+
+      &:hover {
+        background-color: rgb(193, 50, 50);
+      }
+    }
+
+    .save-button {
+      background-color: rgba(58, 162, 58, 0.9);
+
+      &:hover {
+        background-color: rgb(48, 188, 48);
+      }
+    }
+  }
+}

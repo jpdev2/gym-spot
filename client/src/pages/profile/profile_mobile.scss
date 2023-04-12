@@ -1,0 +1,21 @@
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .profile-page {
+    padding-top: 0vh;
+
+    .layout {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+
+      .links {
+        display: none;
+      }
+
+      .content {
+        width: 100%;
+        background-color: white;
+        height: 95vh;
+      }
+    }
+  }
+}

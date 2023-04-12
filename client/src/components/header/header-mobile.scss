@@ -1,0 +1,49 @@
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .header {
+    .left {
+      .logo-container {
+        margin-left: 10px;
+
+        h1 {
+          margin-left: 1vw;
+          font-size: 2vh;
+        }
+      }
+    }
+
+    .mobile-nav-link {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      margin: 10px 0 20px;
+    }
+
+    .buttons {
+      .links {
+        width: 5vw;
+        min-width: 100px;
+        margin-right: 0px;
+      }
+    }
+
+    .profile-button {
+      width: 100%;
+      padding-left: 13vw;
+      justify-content: space-between;
+      margin-right: 20px;
+
+      .profileButton img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    .dropdown {
+      width: 200px;
+
+      .desktop-nav-link {
+        display: none;
+      }
+    }
+  }
+}

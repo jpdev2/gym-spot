@@ -1,0 +1,48 @@
+@media screen and (min-width: 1281px) {
+  .diet-page {
+    display: grid;
+    grid-template-columns: 25fr 50fr 25fr;
+    grid-column-gap: 20px;
+    width: 98vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    .pantry,
+    .dietlogs,
+    .past-logs {
+      width: 100%;
+      height: 90vh;
+      margin: 2.5vh auto 0;
+      padding: 10px 5px;
+      box-sizing: border-box;
+
+      background: rgba(122, 127, 148, 0.4);
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .diet-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1vh;
+    width: 100%;
+    margin: 0 auto;
+    height: 95vh;
+    overflow: hidden;
+
+    .pantry,
+    .dietlogs,
+    .past-logs {
+      padding: 5px;
+      box-sizing: border-box;
+
+      background: rgba(122, 127, 148, 0.4);
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}

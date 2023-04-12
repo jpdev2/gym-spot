@@ -1,0 +1,97 @@
+.add-exercise-container {
+  .toggle-button {
+    width: 100px;
+    height: 32px;
+    background-color: #5389ed;
+    color: white;
+    border: none;
+    border-radius: 200px;
+    font-size: 12px;
+    transition-duration: 1s;
+
+    &:hover {
+      background-color: #0656ec;
+    }
+  }
+}
+
+.add-exercise {
+  width: 600px;
+  height: 300px;
+  padding: 30px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: rgb(122, 127, 148);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  h5 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .form-container {
+    .headers,
+    .inputs {
+      display: grid;
+      grid-template-columns: 50fr 50fr;
+      grid-column-gap: 10px;
+    }
+
+    .headers {
+      p {
+        margin: 10px 0 2px;
+        font-size: 16px;
+      }
+    }
+
+    .inputs {
+      input {
+        color: white;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    width: 290px;
+    justify-content: space-between;
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    button {
+      padding: 10px 25px;
+      width: 140px;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      text-transform: capitalize;
+      transition-duration: 1s;
+    }
+
+    .cancel-button {
+      background-color: rgba(197, 78, 78, 0.9);
+
+      &:hover {
+        background-color: rgb(193, 50, 50);
+      }
+    }
+
+    .add-button {
+      background-color: rgba(58, 162, 58, 0.9);
+
+      &:hover {
+        background-color: rgb(48, 188, 48);
+      }
+    }
+  }
+}

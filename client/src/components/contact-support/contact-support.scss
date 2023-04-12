@@ -1,0 +1,56 @@
+@media screen and (min-width: 1281px) {
+  .contact-support {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    height: 100%;
+
+    .info-message {
+      margin: 10px 0 0;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+
+      label {
+        margin: 20px 0 5px;
+        align-self: flex-start;
+        color: white;
+      }
+
+      input,
+      textarea {
+        color: white;
+      }
+
+      button {
+        margin: 40px 0 20px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-transform: capitalize;
+        transition-duration: 1s;
+        padding: 10px 15px;
+        width: 150px;
+        background-color: rgba(58, 162, 58, 0.5);
+
+        &:hover {
+          background-color: rgb(2, 192, 2);
+        }
+      }
+    }
+
+    .receipt {
+      margin: 30px auto;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+}

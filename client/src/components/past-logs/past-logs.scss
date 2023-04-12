@@ -1,0 +1,21 @@
+.past-logs {
+  h5 {
+    margin: 0 10px;
+    font-size: 20px;
+  }
+
+  .headers {
+    border-bottom: white 2px solid;
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .content {
+    height: 78vh;
+    overflow: scroll;
+  }
+}

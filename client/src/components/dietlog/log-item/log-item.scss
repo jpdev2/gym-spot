@@ -1,0 +1,17 @@
+.log-item {
+  display: grid;
+  grid-template-columns: 20fr 16fr 16fr 16fr 16fr 16fr;
+  width: 100%;
+  font-size: 14px;
+  text-transform: capitalize;
+
+  .food-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .centered {
+    justify-self: center;
+  }
+}

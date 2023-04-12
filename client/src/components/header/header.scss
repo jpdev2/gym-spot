@@ -1,0 +1,98 @@
+.header-component {
+  background: rgba(42, 49, 74, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  z-index: 11;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    .logo-container {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 2vh;
+        width: auto;
+        margin-left: 1vw;
+      }
+
+      h1 {
+        margin-left: 0.25vw;
+        font-size: 2vh;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .links {
+      display: flex;
+      width: 250px;
+      justify-content: space-between;
+      margin-right: 100px;
+    }
+
+    .profile-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      cursor: pointer;
+      background: none;
+      border: none;
+
+      img {
+        height: 30px;
+        width: 30px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+      }
+    }
+
+    .dropdown {
+      position: fixed;
+      top: 5vh;
+      right: 0;
+      background: rgba(42, 49, 74, 0.9);
+
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      .mobile-nav-link {
+        display: none;
+      }
+    }
+  }
+}

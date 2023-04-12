@@ -1,0 +1,37 @@
+.edit-log-item {
+  color: white;
+  display: grid;
+  grid-template-columns: 50fr 40fr 10fr;
+  grid-column-gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+
+  p {
+    font-size: 14px;
+  }
+
+  .size-input {
+    width: 150px;
+    height: 40px;
+    color: white;
+  }
+
+  .delete-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(197, 78, 78, 0.7);
+    font-size: 20px;
+    color: white;
+    transition-duration: 1s;
+
+    &:hover {
+      background-color: rgb(255, 0, 0);
+    }
+  }
+
+  .delete-button-disabled {
+    background-color: rgb(106, 78, 197);
+  }
+}

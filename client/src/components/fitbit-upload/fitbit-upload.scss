@@ -1,0 +1,79 @@
+.fitbit-upload {
+  width: 600px;
+  height: 300px;
+  padding: 30px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: rgb(122, 127, 148);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  h5 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  p {
+    a {
+      color: rgb(11, 49, 173);
+      text-decoration: none;
+    }
+  }
+
+  .form-container {
+    width: 100%;
+    margin: 50px 0 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .buttons {
+    display: flex;
+    width: 290px;
+    justify-content: center;
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    button {
+      margin: 0 5px;
+      box-sizing: border-box;
+      padding: 10px 25px;
+      width: 140px;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      text-transform: capitalize;
+      transition-duration: 1s;
+    }
+
+    .cancel-button {
+      background-color: rgba(197, 78, 78, 0.9);
+
+      &:hover {
+        background-color: rgb(193, 50, 50);
+      }
+    }
+
+    .upload-button {
+      background-color: rgba(58, 162, 58, 0.9);
+
+      &:hover {
+        background-color: rgb(48, 188, 48);
+      }
+    }
+  }
+
+  .progress-indicator {
+    margin: 20px auto 0;
+    width: 300px;
+  }
+}

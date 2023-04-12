@@ -1,0 +1,87 @@
+@media screen and (min-width: 1281px) {
+  .login-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    .header {
+      background: rgba(42, 49, 74, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+
+      .logo {
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: 2vh;
+          width: auto;
+          margin-left: 1vw;
+        }
+
+        h1 {
+          margin-left: 0.25vw;
+          font-size: 2vh;
+        }
+      }
+    }
+
+    form {
+      width: 600px;
+      margin: 200px auto 0;
+      padding: 20px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(122, 127, 148, 0.4);
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      h1 {
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
+
+      .form-input {
+        width: 400px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        height: 40px;
+        width: 100px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: rgba(58, 162, 58, 0.5);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-size: 14px;
+        transition-duration: 1s;
+
+        &:hover {
+          background-color: rgb(2, 192, 2);
+        }
+      }
+
+      .links {
+        margin-top: 50px;
+        display: flex;
+
+        a {
+          margin-left: 10px;
+          color: rgb(77, 182, 110);
+        }
+      }
+    }
+  }
+}

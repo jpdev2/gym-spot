@@ -1,0 +1,53 @@
+.data-graph {
+  width: 800px;
+  height: 550px;
+  margin: 20px 20px 0;
+  padding: 10px 15px;
+  box-sizing: border-box;
+
+  background: rgba(122, 127, 148, 0.4);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  h5 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .range-picker {
+    margin: 10px 0 20px;
+    display: flex;
+    align-items: center;
+
+    .col {
+      width: 150px;
+      margin: 0 5px;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin: 0;
+        color: white;
+        font-size: 16px;
+      }
+
+      input {
+        color: white;
+        border: white 1px solid;
+        border-radius: 5px;
+        padding: 0 5px;
+        height: 30px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .graph-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

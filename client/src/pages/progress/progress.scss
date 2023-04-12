@@ -1,0 +1,26 @@
+.progress-page {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 92vh;
+  box-sizing: border-box;
+
+  .toggle-button {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+
+    width: 100px;
+    height: 32px;
+    background-color: #5389ed;
+    color: white;
+    border: none;
+    border-radius: 200px;
+    font-size: 12px;
+    transition-duration: 1s;
+
+    &:hover {
+      background-color: #0656ec;
+    }
+  }
+}

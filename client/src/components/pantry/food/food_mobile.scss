@@ -1,0 +1,11 @@
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .food {
+    grid-template-columns: 35fr 25fr 20fr 20fr;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

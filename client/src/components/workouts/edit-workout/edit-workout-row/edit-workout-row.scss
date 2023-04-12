@@ -1,0 +1,39 @@
+.edit-workout-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 350px 200px 200px 100fr;
+  grid-column-gap: 20px;
+  margin: 15px 0 10px;
+  align-items: center;
+  box-sizing: border-box;
+
+  p {
+    font-size: 14px;
+  }
+
+  input {
+    width: 200px;
+    height: 20px;
+    color: white;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    margin: 0 0 0 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(197, 78, 78, 0.7);
+    font-size: 20px;
+    color: white;
+    transition-duration: 1s;
+
+    &:hover {
+      background-color: rgb(255, 0, 0);
+    }
+  }
+
+  .delete-button-disabled {
+    background-color: rgb(106, 78, 197);
+  }
+}

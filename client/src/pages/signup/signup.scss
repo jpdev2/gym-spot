@@ -1,0 +1,132 @@
+@media screen and (min-width: 1281px) {
+  .signup-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    .header {
+      background: rgba(42, 49, 74, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+
+      .logo {
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: 2vh;
+          width: auto;
+          margin-left: 1vw;
+        }
+
+        h1 {
+          margin-left: 0.25vw;
+          font-size: 2vh;
+        }
+      }
+    }
+
+    form {
+      width: 1000px;
+      margin: 200px auto 0;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(122, 127, 148, 0.4);
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      h1 {
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 50fr 50fr;
+        grid-column-gap: 30px;
+        width: 100%;
+
+        .col {
+          width: 100%;
+          margin-bottom: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          h2 {
+            font-size: 20px;
+          }
+
+          .row {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+
+            .input-container {
+              margin-bottom: 10px;
+              width: 49%;
+              display: flex;
+              flex-direction: column;
+
+              label {
+                color: white;
+                margin-bottom: 5px;
+              }
+
+              input {
+                color: white;
+
+                ::placeholder {
+                  color: red;
+                }
+              }
+            }
+
+            .wide-input {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      button[type="submit"] {
+        height: 40px;
+        width: 125px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: rgba(58, 162, 58, 0.5);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-size: 14px;
+        transition-duration: 1s;
+
+        &:hover {
+          background-color: rgb(2, 192, 2);
+        }
+      }
+
+      .links {
+        margin-top: 50px;
+        display: flex;
+
+        a {
+          margin-left: 10px;
+          color: rgb(77, 182, 110);
+        }
+      }
+    }
+  }
+}

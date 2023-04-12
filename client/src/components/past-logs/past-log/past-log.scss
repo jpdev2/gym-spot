@@ -1,0 +1,12 @@
+.past-log {
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  align-items: center;
+  justify-items: center;
+  font-size: 14px;
+  padding-left: 20px;
+
+  .mobile-label {
+    display: none;
+  }
+}

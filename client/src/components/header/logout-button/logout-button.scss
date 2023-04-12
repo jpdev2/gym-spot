@@ -1,0 +1,17 @@
+.logout-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(157, 76, 160);
+  padding: 5px 25px;
+  color: white;
+  transition-duration: 1s;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(165, 16, 224);
+  }
+}

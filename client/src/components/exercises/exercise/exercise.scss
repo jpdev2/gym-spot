@@ -1,0 +1,52 @@
+.exercise {
+  width: 95%;
+  display: grid;
+  grid-template-columns: 70fr 15fr 15fr;
+  align-items: center;
+  margin: 0 auto 10px;
+
+  p {
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .name-container {
+    width: 100%;
+    overflow: hidden;
+
+    p {
+      text-overflow: ellipsis;
+    }
+  }
+
+  button {
+    color: white;
+    border: none;
+    border-radius: 12px;
+    text-transform: capitalize;
+    transition-duration: 1s;
+    width: 40px;
+    height: 40px;
+    justify-self: center;
+  }
+
+  .log-button {
+    background-color: rgba(58, 162, 58, 0.5);
+    font-size: 20px;
+
+    &:hover {
+      background-color: rgb(2, 192, 2);
+    }
+  }
+
+  .delete-button {
+    background-color: rgba(197, 78, 78, 0.5);
+    font-size: 14px;
+
+    &:hover {
+      background-color: rgb(255, 0, 0);
+    }
+  }
+}

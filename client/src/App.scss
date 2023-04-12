@@ -1,0 +1,22 @@
+.App {
+  .app-content {
+    margin-top: 5vh;
+    background-color: #070a20;
+    height: 95vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+html {
+  background-color: #070a20;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}

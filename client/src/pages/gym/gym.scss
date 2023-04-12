@@ -1,0 +1,21 @@
+.gym-page {
+  display: grid;
+  grid-template-columns: 35fr 65fr;
+  grid-column-gap: 20px;
+  width: 98vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  .exercises,
+  .workouts {
+    width: 100%;
+    height: 90vh;
+    margin: 2.5vh auto 0;
+    padding: 10px 5px;
+    box-sizing: border-box;
+
+    background: rgba(122, 127, 148, 0.4);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
