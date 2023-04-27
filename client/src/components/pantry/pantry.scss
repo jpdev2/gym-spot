@@ -1,5 +1,7 @@
 @media screen and (min-width: 1281px) {
   .pantry {
+    overflow: hidden;
+
     .pantry-header {
       display: flex;
       align-items: center;
@@ -10,6 +12,22 @@
         font-weight: 600;
         margin: 0;
         font-size: 20px;
+      }
+    }
+
+    .searchbar-container {
+      padding: 10px 0 0;
+
+      .MuiInputBase-formControl {
+        box-sizing: border-box;
+        border: white 2px solid;
+        border-radius: 7px;
+        color: white;
+        height: 40px;
+
+        svg {
+          color: white;
+        }
       }
     }
 
@@ -32,7 +50,7 @@
 
     .foods-container {
       padding: 0 10px;
-      height: 88%;
+      height: 83%;
       border-radius: 20px;
       box-sizing: border-box;
       overflow: scroll;

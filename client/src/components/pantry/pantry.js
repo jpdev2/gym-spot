@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
-import { Modal } from "@mui/material";
+import {
+  IconButton,
+  InputAdornment,
+  Modal,
+  OutlinedInput,
+  TextField,
+} from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 import AddFood from "./add-food/add-food";
 import Food from "./food/food";
 import LogFood from "./log-food/log-food";
@@ -18,6 +25,8 @@ function Pantry() {
   const [foodToDelete, setFoodToDelete] = useState();
   const [showAdd, setShowAdd] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
+  const [query, setQuery] = useState("");
+  const [filteredFoods, setFilteredFoods] = useState([]);
 
   // fetches user's foods, sets state var "foods" if successful response
   useEffect(() => {
@@ -25,6 +34,8 @@ function Pantry() {
       fetchFoodsByUserId(cookies.userId).then((res) => {
         if (res.type === "success" && res.data) {
           setFoods(res.data);
+          setFilteredFoods(res.data);
+          console.log(res.data.length);
         } else if (res.type === "success") {
           console.warn(
             `fetchFoodsByUserId: no foods for user with id = ${cookies.userId}`
@@ -35,6 +46,21 @@ function Pantry() {
       });
     }
   }, []);
+
+  // updates filteredFoods based on query
+  useEffect(() => {
+    // if query string empty, set filteredFoods to all foods
+    if (query === "") {
+      setFilteredFoods(foods);
+      return;
+    }
+
+    // filters out foods whose name does not include query
+    const includedFoods = foods.filter((f) =>
+      f.name.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredFoods(includedFoods);
+  }, [query]);
 
   const handleAddClick = (id) => {
     setFoodToAdd(foods.find((food) => food.id === id));
@@ -78,6 +104,26 @@ function Pantry() {
         <AddFood />
       </div>
 
+      <div className="searchbar-container">
+        <TextField
+          variant={"outlined"}
+          className="searchbar"
+          placeholder="search for a food"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          fullWidth
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="start">
+                <IconButton>
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+      </div>
+
       <div className="headers-container">
         <p>Food Name</p>
         <p className="centered">Calories</p>
@@ -86,7 +132,7 @@ function Pantry() {
       </div>
 
       <div className="foods-container">
-        {foods.map((food) => {
+        {filteredFoods.map((food) => {
           return (
             <Food
               food={food}
