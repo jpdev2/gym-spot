@@ -2,6 +2,11 @@ import pandas as pd
 from datetime import datetime
 import time
 from util import get_db_connection
+from dotenv import dotenv_values
+from pathlib import Path
+import io
+
+env = dotenv_values(dotenv_path=Path('./.env'))
 
 
 # returns dataframe of all calorie data extracted from json files
@@ -46,7 +51,7 @@ def extract_calorie_data(files):
 # returns user's calorie expenditure data for days between start and end dates
 
 
-def get_tdee_data(user_id, start, end, in_milliseconds=False):
+def get_tdee_data(s3_client, user_id, start, end, in_milliseconds=False):
     # gets data_path from users table
     conn = get_db_connection()
     cur = conn.cursor()
@@ -58,8 +63,16 @@ def get_tdee_data(user_id, start, end, in_milliseconds=False):
     cur.close()
     conn.close()
 
+    # returns if data_path does not exist (TDEE data non-existent)
+    if (data_path == "N/A"):
+        return {"dates": [], "calories": []}
+
+    # retrieves object at data_path in AWS S3
+    obj = s3_client.get_object(Bucket=env["S3_BUCKET"], Key=data_path)
+    csv = io.BytesIO(obj['Body'].read())
+
     # converts csv to dataframe, date column converted from string to datetime
-    df = pd.read_csv(data_path)
+    df = pd.read_csv(csv)
     df['date'] = pd.to_datetime(df['date'], format="%Y-%m-%d")
 
     # converts timestamp from int to dateime, performs millisecond conversion if necessary
@@ -114,7 +127,7 @@ def get_diet_data(user_id, start, end, in_milliseconds=False):
 
 
 # gets earliest and latest dates from user's calorie expenditure data
-def get_tdee_data_bounds(user_id):
+def get_tdee_data_bounds(s3_client, user_id):
     # gets data_path from users table
     conn = get_db_connection()
     cur = conn.cursor()
@@ -126,8 +139,16 @@ def get_tdee_data_bounds(user_id):
     cur.close()
     conn.close()
 
+    # returns if data path does not exist (bounds will be determined by diet_bounds only)
+    if (data_path == "N/A"):
+        return {"min": float("inf"), "max": float("-inf")}
+
+    # retrieves object at data_path in AWS S3
+    obj = s3_client.get_object(Bucket=env["S3_BUCKET"], Key=data_path)
+    csv = io.BytesIO(obj['Body'].read())
+
     # converts csv to dataframe, gets min and max from date column
-    df = pd.read_csv(data_path)
+    df = pd.read_csv(csv)
     min_date_str = df['date'].min()
     max_date_str = df['date'].max()
 

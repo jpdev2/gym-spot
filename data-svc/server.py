@@ -6,10 +6,18 @@ from io import BytesIO, StringIO
 from util import get_db_connection
 import time
 import pandas as pd
+from dotenv import dotenv_values
+from pathlib import Path
+import boto3
 
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+
+# connects to AWS S3 Bucket
+env = dotenv_values(dotenv_path=Path('./.env'))
+s3_client = boto3.client(
+    "s3", aws_access_key_id=env["S3_KEY"], aws_secret_access_key=env["S3_SECRET"])
 
 
 @app.route('/', methods=['GET'])
@@ -74,13 +82,19 @@ def extract_files():
                      for name in calorie_file_names]
 
     # creates dataframe of calorie data from json files, saves to csv
-    outpath = f"/Users/justinbaytosh/Desktop/coding/projects/gym-spot/data-svc/resources/{file_names[0].split('/')[0]}_calories.csv"
+    outpath = f"/resources/{file_names[0].split('/')[0]}_calories.csv"
     start = time.time()
     cal_df = extract_calorie_data(calorie_files)
     print(f"extract_calorie_data(): {time.time() - start} seconds")
-    cal_df.to_csv(outpath, index=False)
+    csv_buffer = StringIO()
+    cal_df.to_csv(csv_buffer, index=False)
 
-    # updates user's data_path to outpath in users table
+    # uploads calorie csv to AWS S3, saves location in S3 to user's data_path in users table if upload successful
+    response = s3_client.put_object(Bucket=env["S3_BUCKET"],
+                                    Key=outpath, Body=csv_buffer.getvalue())
+    status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
+    if status != 200:
+        return {'type': 'error', 'error': f"Unuccessful S3 put_object response. Status - {status}"}
     save_data_path(outpath, int(request.args.get('user_id')))
 
     return {'type': 'success'}
@@ -130,7 +144,7 @@ def get_user_data():
     end = int(request.args.get('end'))
 
     # gets calorie expenditure data for specified date range
-    tdee_data = get_tdee_data(user_id, start, end)
+    tdee_data = get_tdee_data(s3_client, user_id, start, end)
 
     # gets calorie intake data for specified date range
     diet_data = get_diet_data(user_id, start, end)
@@ -144,7 +158,7 @@ def get_bounds():
     user_id = int(request.args.get('user_id'))
 
     # gets bounding dates for: 1. calorie expenditure data, 2. calorie intake data
-    tdee_bounds = get_tdee_data_bounds(user_id)
+    tdee_bounds = get_tdee_data_bounds(s3_client, user_id)
     diet_bounds = get_diet_data_bounds(user_id)
 
     # gets min of mins, max of maxes
