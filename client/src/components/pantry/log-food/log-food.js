@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { evaluate } from "mathjs";
 import { OutlinedInput, TextField } from "@mui/material";
 import { DatePicker } from "@mui/lab";
 import "./log-food.scss";
@@ -7,6 +8,16 @@ import "./log_food_mobile.scss";
 function LogFood({ food, logFood, setShowAdd }) {
   const [consumedSize, setConsumedSize] = useState("");
   const [dateConsumed, setDateConsumed] = useState(new Date());
+
+  // updates consumedSize to a string representing the value of a mathmatical equation (rounded to 2 decimals)
+  // e.g. parseEquation("=3/4") will set consumedSized to "0.75"
+  const parseEquation = (value) => {
+    if (value[0] === "=") {
+      setConsumedSize(
+        (Math.round(evaluate(value.slice(1)) * 100) / 100).toString()
+      );
+    }
+  };
 
   return (
     <form className="log-food">
@@ -23,6 +34,7 @@ function LogFood({ food, logFood, setShowAdd }) {
             placeholder="grams"
             value={consumedSize}
             onChange={(e) => setConsumedSize(e.target.value)}
+            onBlur={(e) => parseEquation(e.target.value)}
           />
           <DatePicker
             views={["day", "month", "year"]}
